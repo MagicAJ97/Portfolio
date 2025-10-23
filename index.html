@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Andrei Ignatovitch — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#A167A5;
+      --card:#e6d1f2;
+      --muted:#1D0F30;
+      --accent:#0f0111; 
+      --radius:14px;
+      --max-width:1000px;
+      color-scheme: light;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,var(--bg),#f6f4f4);
+      color:#000000;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--max-width);
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+
+    @media (max-width:880px){
+      .wrap{grid-template-columns:1fr; padding-bottom:48px}
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 6px 20px rgba(35, 200, 32, 0.06);
+      padding:20px;
+      border:1px solid rgba(15,23,42,0.03);
+    }
+
+    .hero{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:86px; height:86px; border-radius:14px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,#1D0F30,#4A306D);
+      color:(#A167A5); font-weight:700; font-size:28px;
+      box-shadow:0 6px 18px rgba(#5d3592);
+    }
+    h1{margin:0;font-size:20px}
+    .title-sub{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+    .left .section{margin-top:18px}
+    .section h3{margin:0 0 8px 0; font-size:14px}
+    .skill-list{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{font-size:13px;padding:6px 10px;border-radius:999px;border:1px solid rgba(15,23,42,0.06);background:#fbfdff}
+
+    .meta p{margin:6px 0;color:var(--muted);font-size:14px}
+    .link{color:var(--accent);text-decoration:none;font-weight:600}
+    .small{font-size:13px;color:var(--muted)}
+
+    .section + .section{margin-top:18px}
+    .job{
+      border-top:1px solid rgba(15,23,42,0.04);
+      padding-top:12px;
+      margin-top:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+    }
+    
+    .job .job-right{color:var(--muted);font-size:13px;white-space:nowrap}
+
+    .project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:880px){ .project-grid{grid-template-columns:1fr} }
+
+    .project{
+      border-radius:10px;padding:12px;border:1px solid rgba(15,23,42,0.04);
+      background:linear-gradient(180deg,#fafafa,#f6f6f6e9);
+    }
+    .project h4{margin:0;font-size:14px}
+    .project p{margin:8px 0 0 0;color:var(--muted);font-size:13px}
+
+    footer{margin-top:16px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media print{
+      body{padding:0;background:rgb(255, 255, 255)}
+      .wrap{max-width:100%;grid-template-columns:1fr}
+      .card{box-shadow:none;border:none;border-radius:0;padding:0}
+      nav, .contact-form, .cta-buttons {display:none}
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;
+      border:1px solid rgba(15,23,42,0.06);background:rgb(197, 116, 204);font-weight:600;font-size:13px;
+      cursor:pointer;text-decoration:none;color:inherit;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#4A306D); color:white; border:none;
+      box-shadow:0 8px 20px rgba(#A167A5);
+    }
+
+    a:focus, button:focus, input:focus, textarea:focus {outline:3px solid rgba(79,70,229,0.12);outline-offset:2px}
+
+    .muted{color:var(--muted)}
+    .row{display:flex;gap:12px;align-items:center}
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    .cta-buttons{margin-top:12px}
+  </style>
+</head>
+<body>
+  <main class="wrap" id="content">
+    <aside class="left">
+      <section class="card hero" aria-labelledby="hero-title">
+        <div class="avatar" aria-hidden="true">AJ</div>
+        <div>
+          <h1 id="hero-title">Andrei Ignatovitch</h1>
+          <div class="title-sub">Tuleva videopelin kehittäjä</div>
+
+          <div class="cta-buttons" style="margin-top:10px">
+            <a class="btn btn-primary" href="#contact">Ota yhteyttä</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="about-title" style="margin-top:18px">
+        <h3 id="about-title">Tietoa minusta</h3>
+        <p class="small">Olen 28-vuotias mies kuopiosta opiskelen ohjelmisto kehitäjäksi Savon ammatti -ja aikuiopistossa.</p>
+
+        <div style="margin-top:12px">
+          <h3>Yhteystiedot</h3>
+          <div class="meta">
+            <p><strong>Sähköposti:</strong> <a class="link" href="mailto:ignatovitch84@gmail.com">ignatovitch84@gmail.com</a></p>
+            <p><strong>Puhelin:</strong> +358466100773</a></p>
+            <p><strong>TikTok:</strong> <a class="link" href="https://www.tiktok.com/@magicaj97" target="_blank" rel="noopener">MagicAJ97</a></p>
+            <p><strong>Sijainti:</strong> Kuopio, Suomi</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" aria-labelledby="skills-title">
+        <h3 id="skills-title">Taidot</h3>
+        <div class="skill-list" aria-hidden="false">
+          <span class="skill">HTML</span>
+          <span class="skill">C+</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">php</span>
+          <span class="skill">SQL</span>
+        </div>
+      </section>
+
+      <section class="card section" aria-labelledby="languages-title">
+        <h3 id="languages-title">Kielet</h3>
+        <p class="small">Suomi, Venäjä ja Englanti</p>
+      </section>
+    </aside>
+    <section class="right">
+      <div class="card section" id="experience" aria-labelledby="experience-title">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 id="experience-title">Työkokemus</h3>
+        </div>
+
+        <article class="job" aria-labelledby="job1-title">
+          <div class="job-left">
+            <p class="small" style="margin-top:8px">Katto/talon rakentaja</p>
+            <p class="small" style="margin-top:8px">Muuraaminen</p>
+            <p class="small" style="margin-top:8px">Puutyö</p>
+            <p class="small" style="margin-top:8px">Lasten/eläinten hoitaminen</p>
+            <p class="small" style="margin-top:8px">Siivoja</p>
+          </div>
+          <div class="job-right">
+            2014-2018
+          </div>
+        </article>
+
+        <article class="job" aria-labelledby="job2-title">
+          <div class="job-left">
+            <h4 id="job2-title" style="margin:0">Harrastukset</h4>
+            <p class="small" style="margin-top:8px">Thai-nyrkkeily</p>
+            <p class="small" style="margin-top:8px">Piirtäminen</p>
+            <p class="small" style="margin-top:8px">Tekken-valmentaja</p>
+            <p class="small" style="margin-top:8px">Video editointi</p>
+          </div>
+          <div class="job-right muted small">2004-2025</div>
+        </article>
+
+      </div>
+
+      
+      </div>
+
+      <div class="card section" id="contact" aria-labelledby="contact-title" style="margin-top:18px">
+        <h3 id="contact-title">Yhteystiedot &amp; Lähetä viesti</h3>
+        <p class="small muted">Voit täyttää lomakkeen tai lähettää sähköpostia suoraan.</p>
+
+        <form id="contactForm" class="contact-form" style="margin-top:12px" onsubmit="return handleContact(event)" novalidate>
+          <label class="small" for="cname">Nimi</label><br>
+          <input id="cname" name="name" type="text" placeholder="Etunimi Sukunimi" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px" />
+
+          <label class="small" for="cemail" style="margin-top:10px;display:block">Sähköposti</label><br>
+          <input id="cemail" name="email" type="email" placeholder="joku@joku.fi" required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px" />
+
+          <label class="small" for="cmessage" style="margin-top:10px;display:block">Viesti</label><br>
+          <textarea id="cmessage" name="message" rows="5" placeholder="Kirjoita viestisi..." required style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-top:6px"></textarea>
+
+          <div style="margin-top:10px;display:flex;gap:10px;align-items:center">
+            <button type="submit" class="btn btn-primary">Lähetä sähköposti</button>
+            <button type="reset" class="btn">Tyhjennä</button>
+          </div>
+
+          <p class="small muted" style="margin-top:10px">Lomake avaa sähköpostisovelluksen ja kopioi viestin kenttien perusteella. Voit muokata ennen lähettämistä.</p>
+        </form>
+
+        <hr style="margin:16px 0;border:none;border-top:1px solid rgba(15,23,42,0.04)" />
+
+        <p class="small"><strong>Sähköposti:</strong> <a class="link" id="https://workspace.google.com/intl/fi/gmail/" href="ignatovitch84@gmail.com">ignatovitch84@gmail.com</a></p>
+        <p class="small"><strong>TikTok:</strong> <a class="link" href="https://www.tiktok.com/@magicaj97" target="_blank" rel="noopener">MagicAJ97</a></p>
+      </div>
+
+      <footer>
+        <div class="small muted">© <span id="yr"></span> Andrei Ignatovitch  <strong>PORTFOLIO WORK IN PROGRESS</strong></div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function handleContact(e){
+      e.preventDefault();
+      const name = document.getElementById('cname').value.trim();
+      const email = document.getElementById('cemail').value.trim();
+      const message = document.getElementById('cmessage').value.trim();
+
+      if(!name || !email || !message){
+        alert('Täytä kaikki kentät ennen lähettämistä.');
+        return false;
+      }
+
+      const recipient = 'ignatovitch84@gmail.com.com';
+
+      const subject = encodeURIComponent('Uusi viesti portfolion kautta — ' + name);
+      const bodyLines = [
+        'Nimi: ' + name,
+        'Sähköposti: ' + email,
+        '',
+        message
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailto = `mailto:${recipient}?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+      return false;
+    }
+  </script>
+</body>
+</html>
